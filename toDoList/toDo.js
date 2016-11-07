@@ -22,6 +22,14 @@ window.onload = function () // Starts code below when template.html is loaded
 		inItemText.focus(); // Sets mouse to text cursor automatically when new item is added
 		inItemText.select(); // Selects text in textbox when new item is added so user can immediatley start typing his next item to add
 		}
+		else if (event.which == 37 || event.which == 38 || event.which == 39 || event.which == 40)
+		{
+			// If user presses up, down, left or right instead of enter then the code below will start
+			do
+				var confirmPopUp = confirm("You have to press enter to add an item to the to do list. Do you understand that?.");
+			while(confirmPopUp == false)
+				var confirmPopUp = confirm("You have to press enter to add an item to the to do list. Press ok to confirm that you understand.");
+		}
 
 	}
 
