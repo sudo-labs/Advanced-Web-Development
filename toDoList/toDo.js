@@ -63,6 +63,12 @@ window.onload = function () // Starts code below when template.html is loaded
         else // Otherwise, change text back to normal eg (Transparent) Do laundry -> Do laundry  
             itemText.className = "";
     }
+    
+    function deleteAllElements(list) {
+			//declare var and get element by id. Make a new button in html and give it the id clearAll
+			//for loop that goes through list
+			// deletes all elements
+		}
 }
 
 
