@@ -30,6 +30,9 @@ window.onload = function () // Starts code below when template.html is loaded
             while(confirmPopUp == false)
         }
 
+        var delAll = document.getElementById("delAll");
+        delAll.onclick = deleteAllListItems;
+
     }
 
     function addNewItem(list, itemText) 
@@ -47,8 +50,14 @@ window.onload = function () // Starts code below when template.html is loaded
         span.id = "item_" + totalItems; // Gives text a unique id for later processing, eg: text_1, text_2 etc..
         span.innerText = itemText;
 
+        var delButton = document.createElement("button");
+        delButton.type = "button";
+        delButton.innerText = "delete";
+        delButton.onclick = function(){ list.removeChild(listItem); } // removes this item
+
         listItem.appendChild(checkBox); // Appends checkbox to listItem
         listItem.appendChild(span); // Appends text to listItem
+        listItem.appendChild(delButton); // Appends delete button to listItem
 
         list.appendChild(listItem); // Appends listItem to list
     }
@@ -64,11 +73,16 @@ window.onload = function () // Starts code below when template.html is loaded
             itemText.className = "";
     }
     
-    function deleteAllElements(list) {
-			//declare var and get element by id. Make a new button in html and give it the id clearAll
-			//for loop that goes through list
-			// deletes all elements
-		}
+    function deleteAllListItems() {
+        var list = document.getElementById("toDoList");
+        var elems = list.childNodes;
+        var len = list.childNodes.length;
+        
+        for (var i = len-1; i >= 0; i--) // counts down
+        {
+            list.removeChild(elems[i]);
+        }
+    }
 }
 
 

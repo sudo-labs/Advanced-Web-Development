@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 
-	<head> 
-		<title>toDo List</title>
+  <head> 
+    <title>toDo List</title>
 
-		<style>
-			ul { list-style: none; padding: 0; margin: 0;} /* Removes the defualt interface of <ul></ul> by setting its aspects to 0 */
-			li { border: 1px solid #ccc; background: #eee; padding: 5px 10px; color: #000; } /* Adds background color and border to each item of to do list*/
-			li span {padding-left: 10px;} /* Creates space between the checkbox and text of each item for better visual appearance */
-			.checked { text-decoration: line-through; font-weight: bold; color: rgba(0, 0, 0, 0.1);} /* Changes various text aspects everytime an item is checked or clicked */
-		</style>
+    <style>
+      ul { list-style: none; padding: 0; margin: 0;} /* Removes the defualt interface of <ul></ul> by setting its aspects to 0 */
+      li { border: 1px solid #ccc; background: #eee; padding: 5px 10px; color: #000; } /* Adds background color and border to each item of to do list*/
+      li span { padding-left: 10px; position: absolute; } /* Creates space between the checkbox and text of each item for better visual appearance */
+      .checked { text-decoration: line-through; font-weight: bold; color: rgba(0, 0, 0, 0.1);} /* Changes various text aspects everytime an item is checked or clicked */
+      button { position: absolute; margin-left: 500px; margin-top: -3px; }
+    </style>
 
-		<script src="toDo.js"></script> <!-- Loads toDo.js -->
+    <script src="toDo.js"></script> <!-- Loads toDo.js -->
 
-	</head>
+  </head>
 
-	<body>
-		<h1> To do list </h1> <!-- Start of actual toDo list -->
-			<p><input type="text" id="inItemText"/></p> <!-- This is the textbox that takes input -->
-                        <ul id="toDoList"></ul> <!-- Actual toDo list, does nothing. We just need the id for JS manipulation. -->
-	</body>
+  <body>
+    <h1> To do list </h1> <!-- Start of actual toDo list -->
+    <button id="delAll">Delete all</button>
+    <p><input type="text" id="inItemText"/></p> <!-- This is the textbox that takes input -->
+    <ul id="toDoList"></ul> <!-- Actual toDo list, does nothing. We just need the id for JS manipulation. -->
+  </body>
 
 </html>

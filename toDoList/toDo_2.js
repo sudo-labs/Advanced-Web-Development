@@ -31,17 +31,20 @@ window.onload = function () // Starts code below when template.html is loaded
         var checkBox = document.createElement("input"); 
         checkBox.type = "checkbox"; // Initiates the checkbox next to each item
         checkBox.id = "cb_" + totalItems; // Gives a unique id to each item, eg: cb_1, cb_2 etc..
-
-        /* Important new bit for explaining events! */
-        checkBox.onclick = updateItemStatus; // Sends checkBox to updateItemStatus function everytime checkbox is checked
-
+        checkBox.onclick = updateItemStatus; // Sends checkBox to updateItemStatus function everytime checkbox is clicked
 
         var span = document.createElement("span");
         span.id = "item_" + totalItems; // Gives text a unique id for later processing, eg: text_1, text_2 etc..
         span.innerText = itemText;
 
+        var delButton = document.createElement("button");
+        delButton.type = "button";
+        delButton.innerText = "delete";
+        delButton.onclick = function(){ list.removeChild(listItem); } // removes this item
+
         listItem.appendChild(checkBox); // Appends checkbox to listItem
         listItem.appendChild(span); // Appends text to listItem
+        listItem.appendChild(delButton); // Appends delete button to listItem
 
         list.appendChild(listItem); // Appends listItem to list
     }
